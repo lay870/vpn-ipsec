@@ -2,7 +2,11 @@
 
 # IPsec VPN Server Auto Setup Scripts
 
-[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-vpn-ipsec) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-vpn-ipsec)
+<<<<<<< HEAD
+[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-vpn-ipsec) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-vpn-ipsec))
+=======
+[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-vpn-ipsec) [![Docker Pulls](docs/images/badges/docker-pulls.svg)]([https://github.com/lay870/docker-vpn-ipsec](https://github.com/lay870/docker-vpn-ipsec))
+>>>>>>> d2071a7b1214b1950b43e1e2e1204fa0a3578346
 
 Set up your own IPsec VPN server in just a few minutes, with IPsec/L2TP, Cisco IPsec and IKEv2.
 
