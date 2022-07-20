@@ -2,7 +2,7 @@
 
 # IPsec VPN Server Auto Setup Scripts
 
-[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-ipsec-vpn-server) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-ipsec-vpn-server)
+[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-vpn-ipsec) [![Docker Pulls](docs/images/badges/docker-pulls.svg)]([https://github.com/lay870/docker-ipsec-vpn-server](https://github.com/lay870/docker-vpn-ipsec))
 
 Set up your own IPsec VPN server in just a few minutes, with IPsec/L2TP, Cisco IPsec and IKEv2.
 
