@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "username": {
-      "value": "Vpnuser"
+      "value": "teknomid"
     },
     "password": {
-      "value": "Password123#"
+      "value": "Password123#Ab"
     },
     "preSharedKey": {
       "value": "mypsksupersecure"

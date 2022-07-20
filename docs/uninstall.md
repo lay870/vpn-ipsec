@@ -1,6 +1,6 @@
 # Uninstall the VPN
 
-*Read this in other languages: [English](uninstall.md), [中文](uninstall-zh.md).*
+*Read this in other languages: [English](uninstall.md).*
 
 * [Uninstall using helper script](#uninstall-using-helper-script)
 * [Manually uninstall the VPN](#manually-uninstall-the-vpn)

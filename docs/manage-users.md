@@ -1,6 +1,6 @@
 # Manage VPN Users
 
-*Read this in other languages: [English](manage-users.md), [中文](manage-users-zh.md).*
+*Read this in other languages: [English](manage-users.md).*
 
 By default, a single user account for VPN login is created. If you wish to view or manage users for the IPsec/L2TP and IPsec/XAuth ("Cisco IPsec") modes, read this document. For IKEv2, see [Manage client certificates](ikev2-howto.md#manage-client-certificates).
 

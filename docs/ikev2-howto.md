@@ -1,6 +1,6 @@
 # Guide: How to Set Up and Use IKEv2 VPN
 
-*Read this in other languages: [English](ikev2-howto.md), [中文](ikev2-howto-zh.md).*
+*Read this in other languages: [English](ikev2-howto.md).*
 
 **Note:** You may also connect using [IPsec/L2TP](clients.md) or [IPsec/XAuth](clients-xauth.md) mode.
 

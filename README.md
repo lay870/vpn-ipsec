@@ -2,7 +2,7 @@
 
 # IPsec VPN Server Auto Setup Scripts
 
-[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-ipsec-vpn-server) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-ipsec-vpn-server)
+[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-vpn-ipsec) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-vpn-ipsec)
 
 Set up your own IPsec VPN server in just a few minutes, with IPsec/L2TP, Cisco IPsec and IKEv2.
 
@@ -84,7 +84,7 @@ This also includes Linux VMs in public clouds, such as [DigitalOcean](https://bl
 
 [**&raquo; I want to run my own VPN but don't have a server for that**](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps)
 
-A pre-built [Docker image](https://github.com/lay870/docker-ipsec-vpn-server) is also available. Advanced users can install on a [Raspberry Pi](https://www.raspberrypi.org). [[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
+A pre-built [Docker image](https://github.com/lay870/docker-vpn-ipsec) is also available. Advanced users can install on a [Raspberry Pi](https://www.raspberrypi.org). [[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
 
 :warning: **DO NOT** run these scripts on your PC or Mac! They should only be used on a server!
 
