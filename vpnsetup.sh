@@ -1,27 +1,4 @@
 #!/bin/sh
-#
-# Script for automatic setup of an IPsec VPN server on Ubuntu, Debian, CentOS/RHEL,
-# Rocky Linux, AlmaLinux, Oracle Linux, Amazon Linux 2 and Alpine Linux
-#
-# DO NOT RUN THIS SCRIPT ON YOUR PC OR MAC!
-#
-# The latest version of this script is available at:
-# https://github.com/hwdsl2/setup-ipsec-vpn
-#
-# Copyright (C) 2021-2022 Lin Song <linsongui@gmail.com>
-#
-# This work is licensed under the Creative Commons Attribution-ShareAlike 3.0
-# Unported License: http://creativecommons.org/licenses/by-sa/3.0/
-#
-# Attribution required: please include my name in any derivative and let me
-# know how you have improved it!
-
-# =====================================================
-
-# Define your own values for these variables
-# - IPsec pre-shared key, VPN username and password
-# - All values MUST be placed inside 'single quotes'
-# - DO NOT use these special characters within values: \ " '
 
 YOUR_IPSEC_PSK=''
 YOUR_USERNAME=''
