@@ -3,7 +3,7 @@
 # Script to change IKEv2 VPN server address
 #
 # The latest version of this script is available at:
-# https://github.com/hwdsl2/setup-ipsec-vpn
+# https://github.com/lay870/vpn-ipsec
 #
 # Copyright (C) 2022 Lin Song <linsongui@gmail.com>
 #
@@ -94,7 +94,7 @@ check_libreswan() {
     || ! printf '%s' "$ipsec_ver" | grep -qi 'libreswan'; then
 cat 1>&2 <<'EOF'
 Error: This script can only be used with an IPsec server created using:
-       https://github.com/hwdsl2/setup-ipsec-vpn
+       https://github.com/lay870/vpn-ipsec
 EOF
     exit 1
   fi

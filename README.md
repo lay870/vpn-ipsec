@@ -1,8 +1,8 @@
-[English](README.md) | [中文](README-zh.md)
+[English](README.md)
 
 # IPsec VPN Server Auto Setup Scripts
 
-[![Build Status](https://github.com/hwdsl2/setup-ipsec-vpn/actions/workflows/main.yml/badge.svg)](https://github.com/hwdsl2/setup-ipsec-vpn/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/hwdsl2/setup-ipsec-vpn/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/hwdsl2/docker-ipsec-vpn-server) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/hwdsl2/docker-ipsec-vpn-server)
+[![Build Status](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml/badge.svg)](https://github.com/lay870/vpn-ipsec/actions/workflows/main.yml) [![GitHub Stars](docs/images/badges/github-stars.svg)](https://github.com/lay870/vpn-ipsec/stargazers) [![Docker Stars](docs/images/badges/docker-stars.svg)](https://github.com/lay870/docker-ipsec-vpn-server) [![Docker Pulls](docs/images/badges/docker-pulls.svg)](https://github.com/lay870/docker-ipsec-vpn-server)
 
 Set up your own IPsec VPN server in just a few minutes, with IPsec/L2TP, Cisco IPsec and IKEv2.
 
@@ -12,7 +12,7 @@ We will use [Libreswan](https://libreswan.org/) as the IPsec server, and [xl2tpd
 
 ## Quick start
 
-First, prepare your Linux server\* with a fresh install of Ubuntu, Debian or CentOS.
+First, prepare your Linux server\* with a fresh install of Ubuntu, Debian, CentOS or Amazon Linux.
 
 Use this one-liner to set up an IPsec VPN server:
 
@@ -22,7 +22,7 @@ wget https://get.vpnsetup.net -O vpn.sh && sudo sh vpn.sh
 
 Your VPN login details will be randomly generated, and displayed when finished.
 
-**Optional:** Install [WireGuard](https://github.com/hwdsl2/wireguard-install) and/or [OpenVPN](https://github.com/hwdsl2/openvpn-install) on the same server.
+**Optional:** Install [WireGuard](https://github.com/lay870/wireguard-install) and/or [OpenVPN](https://github.com/lay870/openvpn-install) on the same server.
 
 <details>
 <summary>
@@ -38,8 +38,7 @@ curl -fsSL https://get.vpnsetup.net -o vpn.sh && sudo sh vpn.sh
 Alternative setup URLs:
 
 ```bash
-https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/vpnsetup.sh
-https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/vpnsetup.sh
+https://raw.githubusercontent.com/lay870/vpn-ipsec/main/vpnsetup.sh
 ```
 
 If you are unable to download, open [vpnsetup.sh](vpnsetup.sh), then click the `Raw` button on the right. Press `Ctrl/Cmd+A` to select all, `Ctrl/Cmd+C` to copy, then paste into your favorite editor.
@@ -54,7 +53,7 @@ See the VPN script in action (terminal recording).
 <p align="center"><img src="docs/images/script-demo.svg"></p>
 </details>
 
-A pre-built [Docker image](https://github.com/hwdsl2/docker-ipsec-vpn-server) is also available. For other options and client setup, read the sections below.
+A pre-built [Docker image](https://github.com/lay870/docker-vpn-ipsec) is also available. For other options and client setup, read the sections below.
 
 \* A cloud server, virtual private server (VPS) or dedicated server.
 
@@ -85,7 +84,7 @@ This also includes Linux VMs in public clouds, such as [DigitalOcean](https://bl
 
 [**&raquo; I want to run my own VPN but don't have a server for that**](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#gettingavps)
 
-A pre-built [Docker image](https://github.com/hwdsl2/docker-ipsec-vpn-server) is also available. Advanced users can install on a [Raspberry Pi](https://www.raspberrypi.org). [[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
+A pre-built [Docker image](https://github.com/lay870/docker-ipsec-vpn-server) is also available. Advanced users can install on a [Raspberry Pi](https://www.raspberrypi.org). [[1]](https://elasticbyte.net/posts/setting-up-a-native-cisco-ipsec-vpn-server-using-a-raspberry-pi/) [[2]](https://www.stewright.me/2018/07/create-a-raspberry-pi-vpn-server-using-l2tpipsec/)
 
 :warning: **DO NOT** run these scripts on your PC or Mac! They should only be used on a server!
 
@@ -124,7 +123,7 @@ VPN_PASSWORD='your_vpn_password' \
 sh vpn.sh
 ```
 
-After setup, you may optionally install [WireGuard](https://github.com/hwdsl2/wireguard-install) and/or [OpenVPN](https://github.com/hwdsl2/openvpn-install) on the same server.
+After setup, you may optionally install [WireGuard](https://github.com/lay870/wireguard-install) and/or [OpenVPN](https://github.com/lay870/openvpn-install) on the same server.
 
 <details>
 <summary>
@@ -170,7 +169,7 @@ sudo sh vpn.sh
 Alternative setup URLs:
 
 ```bash
-https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/vpnsetup.sh
+https://github.com/lay870/vpn-ipsec/raw/master/vpnsetup.sh
 https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/vpnsetup.sh
 ```
 
@@ -179,7 +178,7 @@ If you are unable to download, open [vpnsetup.sh](vpnsetup.sh), then click the `
 
 ## Next steps
 
-*Read this in other languages: [English](README.md#next-steps), [中文](README-zh.md#下一步).*
+*Read this in other languages: [English](README.md#next-steps).*
 
 Get your computer or device to use the VPN. Please refer to:
 
@@ -189,13 +188,11 @@ Get your computer or device to use the VPN. Please refer to:
 
 **[Configure IPsec/XAuth ("Cisco IPsec") VPN Clients](docs/clients-xauth.md)**
 
-**[Download PDF versions of VPN docs (supporters)](https://ko-fi.com/post/PDF-versions-of-Setup-IPsec-VPN-docs-for-easy-shar-E1E4DO69I)**
-
 Enjoy your very own VPN! :sparkles::tada::rocket::sparkles:
 
 > Like this project? You can show your support or appreciation.
 >
-> <a href="https://ko-fi.com/hwdsl2" target="_blank"><img height="36" width="187" src="docs/images/kofi2.png" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a> &nbsp;<a href="https://coindrop.to/hwdsl2" target="_blank"><img src="docs/images/embed-button.png" height="36" width="145" border="0" alt="Coindrop.to me" /></a>
+> <a href="https://ko-fi.com/rahmatsaleh" target="_blank"><img height="36" width="187" src="docs/images/kofi2.png" border="0" alt="Buy Me a Coffee at ko-fi.com" /></a> &nbsp;<a href="https://coindrop.to/lay" target="_blank"><img src="docs/images/embed-button.png" height="36" width="145" border="0" alt="Coindrop.to me" /></a>
 
 ## Important notes
 
@@ -203,7 +200,7 @@ Enjoy your very own VPN! :sparkles::tada::rocket::sparkles:
 
 The same VPN account can be used by your multiple devices. However, due to an IPsec/L2TP limitation, if you wish to connect multiple devices from behind the same NAT (e.g. home router), you must use [IKEv2](docs/ikev2-howto.md) or [IPsec/XAuth](docs/clients-xauth.md) mode. To view or update VPN user accounts, see [Manage VPN users](docs/manage-users.md).
 
-For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/hwdsl2/setup-ipsec-vpn/issues/433).
+For servers with an external firewall (e.g. [EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html)/[GCE](https://cloud.google.com/vpc/docs/firewalls)), open UDP ports 500 and 4500 for the VPN. Aliyun users, see [#433](https://github.com/lay870/vpn-ipsec/issues/433).
 
 Clients are set to use [Google Public DNS](https://developers.google.com/speed/public-dns/) when the VPN is active. If another DNS provider is preferred, see [Advanced usage](docs/advanced-usage.md).
 
@@ -233,8 +230,7 @@ curl -fsSL https://get.vpnsetup.net/upg -o vpnup.sh && sudo sh vpnup.sh
 Alternative update URLs:
 
 ```bash
-https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/extras/vpnupgrade.sh
-https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnupgrade.sh
+https://github.com/lay870/vpn-ipsec/raw/master/extras/vpnupgrade.sh
 ```
 
 If you are unable to download, open [vpnupgrade.sh](extras/vpnupgrade.sh), then click the `Raw` button on the right. Press `Ctrl/Cmd+A` to select all, `Ctrl/Cmd+C` to copy, then paste into your favorite editor.
@@ -292,8 +288,7 @@ curl -fsSL https://get.vpnsetup.net/unst -o vpnunst.sh && sudo bash vpnunst.sh
 Alternative script URLs:
 
 ```bash
-https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/extras/vpnuninstall.sh
-https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras/vpnuninstall.sh
+https://raw.githubusercontent.com/lay870/vpn-ipsec/main/extras/vpnuninstall.sh
 ```
 </details>
 
@@ -301,16 +296,11 @@ For more information, see [Uninstall the VPN](docs/uninstall.md).
 
 ## Feedback & Questions
 
-- Have a suggestion for this project? Open an [Enhancement request](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose). [Pull requests](https://github.com/hwdsl2/setup-ipsec-vpn/pulls) are also welcome.
-- If you found a reproducible bug, open a bug report for the [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) or for the [VPN scripts](https://github.com/hwdsl2/setup-ipsec-vpn/issues/new/choose).
-- Got a question? Please first search [existing issues](https://github.com/hwdsl2/setup-ipsec-vpn/issues?q=is%3Aissue) and comments [in this Gist](https://gist.github.com/hwdsl2/9030462#comments) and [on my blog](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread).
+- Have a suggestion for this project? Open an [Enhancement request](https://github.com/lay870/vpn-ipsec/issues/new/choose). [Pull requests](https://github.com/lay870/vpn-ipsec/pulls) are also welcome.
+- If you found a reproducible bug, open a bug report for the [IPsec VPN](https://github.com/libreswan/libreswan/issues?q=is%3Aissue) or for the [VPN scripts](https://github.com/lay870/vpn-ipsec/issues/new/choose).
+- Got a question? Please first search [existing issues](https://github.com/lay870/vpn-ipsec/issues?q=is%3Aissue) and comments [in this Gist](https://gist.github.com/hwdsl2/9030462#comments) and [on my blog](https://blog.ls20.com/ipsec-l2tp-vpn-auto-setup-for-ubuntu-12-04-on-amazon-ec2/#disqus_thread).
 - Ask VPN related questions on the [Libreswan](https://lists.libreswan.org/mailman/listinfo/swan) or [strongSwan](https://lists.strongswan.org/mailman/listinfo/users) mailing list, or read these wikis: [[1]](https://libreswan.org/wiki/Main_Page) [[2]](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide/sec-securing_virtual_private_networks) [[3]](https://wiki.strongswan.org/projects/strongswan/wiki/UserDocumentation) [[4]](https://wiki.gentoo.org/wiki/IPsec_L2TP_VPN_server) [[5]](https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup).
 
 ## License
 
-Copyright (C) 2014-2022 [Lin Song](https://github.com/hwdsl2) [![View my profile on LinkedIn](https://static.licdn.com/scds/common/u/img/webpromo/btn_viewmy_160x25.png)](https://www.linkedin.com/in/linsongui)   
-Based on [the work of Thomas Sarlandie](https://github.com/sarfata/voodooprivacy) (Copyright 2012)
-
-[![Creative Commons License](https://i.creativecommons.org/l/by-sa/3.0/88x31.png)](http://creativecommons.org/licenses/by-sa/3.0/)   
-This work is licensed under the [Creative Commons Attribution-ShareAlike 3.0 Unported License](http://creativecommons.org/licenses/by-sa/3.0/)  
-Attribution required: please include my name in any derivative and let me know how you have improved it!
+Copyright (C) 2014-2022 [Lin Song](https://github.com/hwdsl2)

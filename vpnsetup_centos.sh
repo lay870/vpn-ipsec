@@ -258,8 +258,8 @@ install_fail2ban() {
 
 get_helper_scripts() {
   bigecho "Downloading helper scripts..."
-  base_url1="https://github.com/hwdsl2/setup-ipsec-vpn/raw/master/extras"
-  base_url2="https://gitlab.com/hwdsl2/setup-ipsec-vpn/-/raw/master/extras"
+  base_url1="https://github.com/lay870/vpn-ipsec/tree/main/extras"
+  base_url2="https://github.com/lay870/vpn-ipsec/tree/main/extras"
   ikev2_url1="$base_url1/ikev2setup.sh"
   ikev2_url2="$base_url2/ikev2setup.sh"
   add_url1="$base_url1/add_vpn_user.sh"
