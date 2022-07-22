@@ -1,8 +1,8 @@
 #!/bin/sh
 
 YOUR_IPSEC_PSK=''
-YOUR_USERNAME=''
-YOUR_PASSWORD=''
+#YOUR_USERNAME=''
+#YOUR_PASSWORD=''
 
 # VPN client setup: https://vpnsetup.net/clients
 
@@ -131,18 +131,20 @@ check_iface() {
 
 check_creds() {
   [ -n "$YOUR_IPSEC_PSK" ] && VPN_IPSEC_PSK="$YOUR_IPSEC_PSK"
-  [ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
-  [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
-  if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
+ # [ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
+ # [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
+  if [ -z "$VPN_IPSEC_PSK" ] && #[ -z "$VPN_USER" ] && #[ -z "$VPN_PASSWORD" ]; 
+  then
     return 0
   fi
-  if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
+  if [ -z "$VPN_IPSEC_PSK" ] #|| [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; 
+  then
     exiterr "All VPN credentials must be specified. Edit the script and re-enter them."
   fi
-  if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
+  if printf '%s' "$VPN_IPSEC_PSK " | LC_ALL=C grep -q '[^ -~]\+'; then
     exiterr "VPN credentials must not contain non-ASCII characters."
   fi
-  case "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" in
+  case "$VPN_IPSEC_PSK " in
     *[\\\"\']*)
       exiterr "VPN credentials must not contain these special characters: \\ \" '"
       ;;
