@@ -1,8 +1,8 @@
 #!/bin/bash
 
 YOUR_IPSEC_PSK=''
-#YOUR_USERNAME=''
-#YOUR_PASSWORD=''
+YOUR_USERNAME=''
+YOUR_PASSWORD=''
 
 # VPN client setup: https://vpnsetup.net/clients
 
@@ -96,8 +96,8 @@ check_iface() {
 
 check_creds() {
   [ -n "$YOUR_IPSEC_PSK" ] && VPN_IPSEC_PSK="$YOUR_IPSEC_PSK"
-#  [ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
- # [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
+  [ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
+  [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
   if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
     bigecho "VPN credentials not set by user. Generating random PSK and password..."
     VPN_IPSEC_PSK=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' </dev/urandom 2>/dev/null | head -c 40)
