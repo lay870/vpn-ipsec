@@ -1,8 +1,8 @@
 #!/bin/bash
 
-YOUR_IPSEC_PSK=''
-YOUR_USERNAME=''
-YOUR_PASSWORD=''
+YOUR_IPSEC_PSK='D8DkZuw7U4XTqp9Mf8bVipAjSWA3FdUpyZhpEyGP'
+#YOUR_USERNAME=''
+#YOUR_PASSWORD=''
 
 # VPN client setup: https://vpnsetup.net/clients
 
@@ -96,21 +96,22 @@ check_iface() {
 
 check_creds() {
   [ -n "$YOUR_IPSEC_PSK" ] && VPN_IPSEC_PSK="$YOUR_IPSEC_PSK"
-  [ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
-  [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
-  if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
-    bigecho "VPN credentials not set by user. Generating random PSK and password..."
-    VPN_IPSEC_PSK=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' </dev/urandom 2>/dev/null | head -c 40)
-    VPN_USER=teknomid
-    VPN_PASSWORD=$(LC_CTYPE=C tr -dc 'A-HJ-NPR-Za-km-z2-9' </dev/urandom 2>/dev/null | head -c 16)
+  #[ -n "$YOUR_USERNAME" ] && VPN_USER="$YOUR_USERNAME"
+ # [ -n "$YOUR_PASSWORD" ] && VPN_PASSWORD="$YOUR_PASSWORD"
+  #if [ -z "$VPN_IPSEC_PSK" ] && [ -z "$VPN_USER" ] && [ -z "$VPN_PASSWORD" ]; then
+  if [ -z "$VPN_IPSEC_PSK" ]; then
+    return 0
   fi
-  if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
+  #if [ -z "$VPN_IPSEC_PSK" ] || [ -z "$VPN_USER" ] || [ -z "$VPN_PASSWORD" ]; then
+  if [ -z "$VPN_IPSEC_PSK" ]; then
     exiterr "All VPN credentials must be specified. Edit the script and re-enter them."
   fi
-  if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
+ # if printf '%s' "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" | LC_ALL=C grep -q '[^ -~]\+'; then
+    if printf '%s' "$VPN_IPSEC_PSK" | LC_ALL=C grep -q '[^ -~]\+'; then
     exiterr "VPN credentials must not contain non-ASCII characters."
   fi
-  case "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" in
+  #case "$VPN_IPSEC_PSK $VPN_USER $VPN_PASSWORD" in
+  case "$VPN_IPSEC_PSK" in
     *[\\\"\']*)
       exiterr "VPN credentials must not contain these special characters: \\ \" '"
       ;;
@@ -142,8 +143,8 @@ check_client_name() {
 
 check_subnets() {
   if [ -s /etc/ipsec.conf ] && grep -qs "hwdsl2 VPN script" /etc/sysctl.conf; then
-    L2TP_NET=${VPN_L2TP_NET:-'192.168.42.0/24'}
-    XAUTH_NET=${VPN_XAUTH_NET:-'192.168.43.0/24'}
+    L2TP_NET=${VPN_L2TP_NET:-'192.168.1.0/24'}
+    XAUTH_NET=${VPN_XAUTH_NET:-'192.168.1.0/24'}
     if ! grep -q "$L2TP_NET" /etc/ipsec.conf \
       || ! grep -q "$XAUTH_NET" /etc/ipsec.conf; then
       echo "Error: The custom VPN subnets specified do not match initial install." >&2
@@ -333,11 +334,11 @@ EOF
 
 create_vpn_config() {
   bigecho "Creating VPN configuration..."
-  L2TP_NET=${VPN_L2TP_NET:-'192.168.42.0/24'}
-  L2TP_LOCAL=${VPN_L2TP_LOCAL:-'192.168.42.1'}
-  L2TP_POOL=${VPN_L2TP_POOL:-'192.168.42.10-192.168.42.250'}
-  XAUTH_NET=${VPN_XAUTH_NET:-'192.168.43.0/24'}
-  XAUTH_POOL=${VPN_XAUTH_POOL:-'192.168.43.10-192.168.43.250'}
+  L2TP_NET=${VPN_L2TP_NET:-'192.168.1.0/24'}
+  L2TP_LOCAL=${VPN_L2TP_LOCAL:-'192.168.1.1'}
+  L2TP_POOL=${VPN_L2TP_POOL:-'192.168.1.10-192.168.1.250'}
+  XAUTH_NET=${VPN_XAUTH_NET:-'192.168.1.0/24'}
+  XAUTH_POOL=${VPN_XAUTH_POOL:-'192.168.1.10-192.168.1.250'}
   DNS_SRV1=${VPN_DNS_SRV1:-'8.8.8.8'}
   DNS_SRV2=${VPN_DNS_SRV2:-'8.8.4.4'}
   DNS_SRVS="\"$DNS_SRV1 $DNS_SRV2\""
@@ -618,8 +619,8 @@ Connect to your new VPN with these details:
 
 Server IP: $public_ip
 IPsec PSK: $VPN_IPSEC_PSK
-Username: $VPN_USER
-Password: $VPN_PASSWORD
+# Username: $VPN_USER
+# Password: $VPN_PASSWORD
 
 Write these down. You'll need them to connect!
 
